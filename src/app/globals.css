@@ -1,26 +1,134 @@
+
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Backgrounds */
+  --primary-bg-light: #f4f0ee;
+  --primary-bg-dark: #222222;
+
+  /* Colors */
+  --black: #000000;
+  --secondary: #cfd3d6;
+  --accent: #4f301d;
+
+  /* Fonts */
+  --font-display-family: var(--font-geist-sans);
+  --font-body-family: var(--font-geist-sans);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* Colors */
+  --color-bg-light: var(--primary-bg-light);
+  --color-bg-dark: var(--primary-bg-dark);
+  --color-black: var(--black);
+  --color-secondary: var(--secondary);
+  --color-accent: var(--accent);
+
+  /* Fonts */
+  --font-display: var(--font-display-family);
+  --font-body: var(--font-body-family);
+  --font-code: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Global reset */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+  background: var(--primary-bg-light);
+  color: var(--black);
+  font-family: var(--font-body-family);
+  font-feature-settings: "ss01" 1;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--primary-bg-light);
+}
+
+/* Accessible keyboard focus */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* Reveal-on-scroll animations */
+.reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  transition:
+    opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Balanced text wrapping */
+.text-balance {
+  text-wrap: balance;
+}
+
+/* Contact form fields
+   Intended for use on dark backgrounds. */
+.input-field {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--secondary);
+  border-radius: 0;
+  color: var(--primary-bg-light);
+  padding: 0.65rem 0;
+  font-family: inherit;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.input-field:focus-visible {
+  border-bottom-color: var(--accent);
+}
+
+.input-field::placeholder {
+  color: var(--secondary);
+  opacity: 1;
+}
+
+.input-field option {
+  background: var(--primary-bg-light);
+  color: var(--black);
+}
+
+.input-field option:disabled {
+  color: var(--secondary);
+}
+
+/* Respect the user's motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+
+  .reveal {
+    transition: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
 }
