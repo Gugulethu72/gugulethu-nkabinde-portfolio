@@ -1,3 +1,4 @@
+
 import Reveal from "./Reveal";
 
 const DISCIPLINES = [
@@ -5,81 +6,88 @@ const DISCIPLINES = [
     number: "01",
     title: "Photography",
     description:
-      "Images that give people, products, places and moments a distinct visual presence.",
+      "I use photography to explore perspectives, capture meaningful moments and create imagery across people, products, architecture and places.",
   },
   {
     number: "02",
     title: "Videography",
     description:
-      "Moving images that capture attention, communicate stories and bring ideas to life.",
+      "I create moving images through visual storytelling, cinematography and editing, bringing concepts, experiences and stories to life.",
   },
   {
     number: "03",
     title: "Graphic Design & Brand Identity",
     description:
-      "Visual identities and design that make businesses, artists and personal brands recognisable.",
+      "I explore visual communication through typography, composition and identity design, developing distinctive visual languages for brands and creative projects.",
   },
-  /* {
+  /*{
     number: "04",
     title: "Web Design & Development",
     description:
-      "Digital experiences that connect your vision with the people you're trying to reach.",
-  }, */
+      "I combine design thinking and web technologies to build digital experiences, from visual interfaces and portfolio websites to functional web applications.",
+  },*/
 ];
 
-export default function WhatWeDo() {
+export default function WhatIDo() {
   return (
     <section
-      id="what-we-do"
+      id="disciplines"
       className="bg-bg-light py-2 md:py-2"
     >
       <div className="mx-auto max-w-6xl px-6 md:px-10">
+
         {/* Introduction */}
         <div className="grid gap-8 md:grid-cols-[0.8fr_1.2fr] md:items-end">
+
           <div>
             <p className="font-body text-[11px] uppercase tracking-[0.12em] text-accent">
-              What We Do
+              My Disciplines
             </p>
           </div>
 
           <div>
-            <h2 className="max-w-3xl font-display text-xl md:text-2xl leading-[1.05] tracking-tight text-black text-balance sm:text-5xl md:text-6xl">
-              We shape the way your
-              <span className="text-accent"> vision is seen.</span>
+            <h2 className="max-w-3xl font-display text-3xl leading-[1.05] tracking-tight text-black text-balance sm:text-5xl md:text-6xl">
+              Different disciplines.
+              <span className="text-accent">
+                {" "}One creative perspective.
+              </span>
             </h2>
 
-            <p className="mt-6 max-w-xl text-sm font-body text-base leading-relaxed text-black/60 md:text-lg">
-              From the first frame to the final pixel, we create visual work that gives people,
-              businesses, artists and ideas a stronger presence.
+            <p className="mt-6 max-w-xl font-body text-sm leading-relaxed text-black/60 md:text-lg">
+              My creative practice moves between imagery,
+              moving pictures, visual communication and
+              digital development. Each discipline offers
+              a different way to explore ideas and bring
+              them into existence.
             </p>
           </div>
         </div>
 
         {/* Disciplines */}
-        <div className="mt-20 border-t grid grid-cols-2 md:grid-cols-3 border-black/15">
+        <div className="mt-20 grid grid-cols-1 border-t border-black/15 sm:grid-cols-2 md:grid-cols-3">
           {DISCIPLINES.map((discipline, index) => (
             <Reveal
               key={discipline.number}
               delay={index * 100}
-              className="border-b border-black/15"
+              className="border-b border-black/15 sm:border-r sm:last:border-r-0"
             >
-              <article className="group grid gap-6 py-9 md:grid-cols-[10px_1fr] md:items-start md:py-12">
+              <article className="group flex h-full flex-col gap-8 px-0 py-9 sm:px-5 md:px-5 md:py-12">
+
                 {/* Number */}
-                <span className="font-body text-[8px] tracking-[0.12em] text-black/40">
+                <span className="font-body text-[10px] tracking-[0.12em] text-black/40">
                   {discipline.number}
                 </span>
 
                 {/* Title */}
-                <h3 className="font-display text-m leading-tight text-black transition-colors duration-300 group-hover:text-accent mr-5 sm:text-m md:text-lg">
+                <h3 className="min-h-[3rem] font-display text-xl leading-tight text-black transition-colors duration-300 group-hover:text-accent md:text-2xl">
                   {discipline.title}
                 </h3>
 
-                <div></div>
-
                 {/* Description */}
-                <p className="max-w-md font-body text-xs leading-relaxed text-black/60 md:ml-auto md:text-[15px]">
+                <p className="max-w-md font-body text-xs leading-relaxed text-black/60 md:text-[13px]">
                   {discipline.description}
                 </p>
+
               </article>
             </Reveal>
           ))}
@@ -87,9 +95,10 @@ export default function WhatWeDo() {
 
         {/* Work CTA */}
         <div className="mt-12 flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
+
           <p className="max-w-md font-body text-sm leading-relaxed text-black/50">
-            Explore how these disciplines come together across our
-            projects.
+            A selection of ideas, experiments and projects
+            developed across these creative disciplines.
           </p>
 
           <a
@@ -99,6 +108,7 @@ export default function WhatWeDo() {
             Explore selected work
             <span aria-hidden="true">↗</span>
           </a>
+
         </div>
       </div>
     </section>

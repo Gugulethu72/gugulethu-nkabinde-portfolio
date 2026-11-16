@@ -1,3 +1,4 @@
+
 import Reveal from "./Reveal";
 
 const SERVICES = [
@@ -5,13 +6,15 @@ const SERVICES = [
     number: "01",
     title: "Photography",
     description:
-      "Images with intention — from people and products to places, events and campaigns.",
+      "I create intentional imagery that captures people, products, places and moments through a considered visual perspective.",
     services: [
       "Portrait",
       "Editorial",
       "Fashion",
       "Events",
       "Lifestyle",
+      "Architecture",
+      "Real Estate",
     ],
     pricing: "From R500",
     pricingNote: "Final pricing depends on the shoot requirements.",
@@ -20,12 +23,13 @@ const SERVICES = [
     number: "02",
     title: "Videography",
     description:
-      "Moving image built to capture attention, communicate a story and give your ideas presence.",
+      "I use moving images, visual storytelling and editing to bring ideas to life, capture experiences and create engaging content.",
     services: [
       "Artist Visuals",
       "Social Content",
-      "Short-form Video",
+      "Short Films",
       "Events",
+      "Property Films",
       "Video Editing",
     ],
     pricing: "From R1,500",
@@ -36,25 +40,26 @@ const SERVICES = [
     number: "03",
     title: "Graphic Design & Brand Identity",
     description:
-      "Visual identities and design that give businesses, artists and personal brands a recognisable presence.",
+      "I develop visual identities and design systems that give brands, businesses and creative projects a distinctive visual presence.",
     services: [
       "Brand Identity",
       "Logo Design",
       "Typography & Colour",
       "Brand Guidelines",
+      "Editorial Design",
       "Posters",
       "Marketing Design",
-      "Digital",
+      "Digital Design",
     ],
-    pricing: "From R500 - R1,500",
+    pricing: "Project-based",
     pricingNote:
-      "Smaller design projects have starting prices; larger identity work is scoped individually.",
+      "Pricing depends on the design requirements and scope of work.",
   },
- /* {
+  {
     number: "04",
     title: "Web Design & Development",
     description:
-      "Digital experiences designed to look considered, work beautifully and give your audience somewhere to connect.",
+      "I design and develop digital experiences that combine visual thinking, functionality and technology to bring ideas online.",
     services: [
       "Website Design",
       "Web Development",
@@ -68,7 +73,7 @@ const SERVICES = [
     pricing: "From R3,500",
     pricingNote:
       "Pricing depends on pages, functionality, integrations and development requirements.",
-  }, */
+  },
 ];
 
 export default function Services() {
@@ -78,27 +83,31 @@ export default function Services() {
       className="bg-bg-light py-15 md:py-15"
     >
       <div className="mx-auto max-w-6xl px-6 md:px-10">
+
         {/* Section Introduction */}
         <div className="max-w-3xl">
           <p className="font-body text-[11px] uppercase tracking-[0.12em] text-accent">
-            Services & Pricing
+            What I Do
           </p>
 
           <h2 className="mt-5 font-display text-4xl leading-[1.05] tracking-tight text-black text-balance sm:text-4xl md:text-5xl">
-            Creative work with purpose,
+            Creativity across different disciplines,
             <br className="hidden sm:block" />
             <span className="text-accent">
-              not just decoration.
+              connected by ideas.
             </span>
           </h2>
 
           <p className="mt-6 max-w-2xl font-body text-base leading-relaxed text-black/65 sm:text-md">
-            From visual storytelling to digital experiences, Khethiwe Creatives brings photography, film, design and technology 
-            together to help people, businesses, artists and ideas make an impression.
+            My work moves between visual storytelling,
+            design and digital development. I bring
+            creative thinking and technical skills
+            together to turn ideas into meaningful
+            visual and digital experiences.
           </p>
         </div>
 
-        {/* Services */}
+        {/* Areas of Focus */}
         <div className="mt-20 border-t border-black/15">
           {SERVICES.map((service, index) => (
             <Reveal
@@ -107,8 +116,10 @@ export default function Services() {
               className="border-b border-black/15"
             >
               <article className="py-10 md:py-14">
+
                 {/* Service Header */}
                 <div className="grid gap-8 md:grid-cols-[100px_1fr_auto] md:items-start">
+
                   {/* Number */}
                   <span className="font-body text-[11px] uppercase tracking-[0.12em] text-black/45">
                     {service.number}
@@ -137,7 +148,7 @@ export default function Services() {
                   </div>
                 </div>
 
-                {/* Included Services */}
+                {/* Areas of Focus */}
                 <div className="mt-8 md:ml-[100px]">
                   <div className="flex flex-wrap gap-x-3 gap-y-2">
                     {service.services.map((item) => (
@@ -157,10 +168,11 @@ export default function Services() {
                     href="#contact"
                     className="inline-flex items-center gap-2 font-body text-[11px] uppercase tracking-[0.1em] text-black transition-colors hover:text-accent"
                   >
-                    Discuss this service
+                    Let's discuss a project
                     <span aria-hidden="true">↗</span>
                   </a>
                 </div>
+
               </article>
             </Reveal>
           ))}
@@ -169,11 +181,11 @@ export default function Services() {
         {/* Pricing Note */}
         <div className="mt-12 max-w-2xl">
           <p className="font-body text-xs leading-relaxed text-black/50">
-            Every project is different. Final pricing is determined by
-            scope, deliverables, production requirements and the needs
-            of your project. Starting prices indicate the minimum
-            investment for selected services and are not fixed
-            quotations.
+            Every project is different. Final pricing is
+            determined by scope, deliverables, production
+            requirements and the needs of the project.
+            Starting prices indicate the minimum investment
+            for selected services and are not fixed quotations.
           </p>
         </div>
 
@@ -182,23 +194,25 @@ export default function Services() {
           <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
             <div>
               <p className="font-display text-2xl text-black sm:text-3xl">
-                Have something in mind?
+                Have an idea in mind?
               </p>
 
               <p className="mt-2 max-w-lg font-body text-sm leading-relaxed text-black/60">
-                Tell us what you're working on, and we'll work out
-                the right creative approach for it.
+                I'm always open to interesting projects,
+                creative collaborations and new opportunities.
+                Let's talk about what we can create.
               </p>
             </div>
 
             <a
               href="#contact"
-              className="inline-flex w-fit  bg-black px-7 py-3.5 font-body text-[11px] uppercase tracking-[0.08em] text-bg-light transition-colors hover:bg-accent"
+              className="inline-flex w-fit bg-black px-7 py-3.5 font-body text-[11px] uppercase tracking-[0.08em] text-bg-light transition-colors hover:bg-accent"
             >
-              Start a project
+              Work with me
             </a>
           </div>
         </div>
+
       </div>
     </section>
   );
