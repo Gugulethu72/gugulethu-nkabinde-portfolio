@@ -4,7 +4,7 @@
 import type { FormEvent } from "react";
 import Reveal from "./Reveal";
 
-const CONTACT_EMAIL = "YOUR_EMAIL@example.com";
+const CONTACT_EMAIL = "gugulethunkabinde48@gmail.com";
 
 export default function Contact() {
   function handleSubmit(event: FormEvent<HTMLFormElement>) {

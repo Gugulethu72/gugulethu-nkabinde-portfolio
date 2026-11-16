@@ -4,15 +4,15 @@ import Image from "next/image";
 const SOCIAL_LINKS = [
   {
     label: "Instagram",
-    href: "https://www.instagram.com/khethiwecreatives2024?igsi=MXRkYnZuYnU0cHh1OQ==",
+    href: "https://www.instagram.com/gugulethursa72/",
   },
   {
     label: "Behance",
-    href: "https://www.behance.net/khethiwcreativ",
+    href: "https://www.behance.net/guguletnkabind",
   },
   {
     label: "LinkedIn",
-    href: "https://www.linkedin.com/in/khethiwe-creatives-undefined-065435433/",
+    href: "https://www.linkedin.com/in/gugulethu-nkabinde-2660732a7/",
   },
 ];
 
